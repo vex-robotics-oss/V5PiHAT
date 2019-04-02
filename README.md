@@ -44,18 +44,19 @@ network={
    }
 
 5. Save the file  as wpa_supplicant.conf in the boot directory
-6. Insert the uSD card into the Raspberry Pi
-7. Plug the mini HDMI cable into the Raspberry Pi and connect the other end to a monitor
-8. Plug the 2.5A power supply into the Raspberry Pi
-9. Record the IP address of the Raspberry Pi. The IP address is shown on completion of boot
-10. Download and install PuTTY on your windows machine https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
-11. Type PuTTY into the Windows search bar and run the program
-12. In the Session category, type in the IP address in the text box labeled Host Name(or IP address)
-13. If this is the first time connecting, PuTTY will issue a security alert. Click Yes.
-14. Enter pi as the login
-15. Enter raspberry as the password
-16. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
+
 # Connecting to the Raspberry Pi
+1. Insert the uSD card into the Raspberry Pi
+2. Plug the mini HDMI cable into the Raspberry Pi and connect the other end to a monitor
+3. Plug the 2.5A power supply into the Raspberry Pi
+4. Record the IP address of the Raspberry Pi. The IP address is shown on completion of boot
+5. Download and install PuTTY on your windows machine https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html
+6. Type PuTTY into the Windows search bar and run the program
+7. In the Session category, type in the IP address in the text box labeled Host Name(or IP address)
+8. If this is the first time connecting, PuTTY will issue a security alert. Click Yes.
+9. Enter pi as the login
+10. Enter raspberry as the password
+11. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
 
 # Installing Software
 
