@@ -45,7 +45,7 @@ network={
 
 5. Save the file  as wpa_supplicant.conf in the boot directory
 
-# Connecting to the Raspberry Pi
+# Connecting to the Raspberry Pi using SSH
 1. Insert the uSD card into the Raspberry Pi
 2. Plug the mini HDMI cable into the Raspberry Pi and connect the other end to a monitor
 3. Plug the 2.5A power supply into the Raspberry Pi
@@ -58,7 +58,12 @@ network={
 10. Enter raspberry as the password
 11. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
 
-# Installing Software
+# Installing TensorFlow & Keras on Raspberry Pi
+1. Connect to the Raspberry Pi using SSH
+2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
+sudo apt update
+sudo apt-get install libatlas-base-dev
+pip3 install tensorflow
 
 # Running Position Detection
 
