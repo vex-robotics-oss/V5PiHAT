@@ -54,7 +54,7 @@ network={
 13. If this is the first time connecting, PuTTY will issue a security alert. Click Yes.
 14. Enter pi as the login
 15. Enter raspberry as the password
-
+16. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
 # Connecting to the Raspberry Pi
 
 # Installing Software
