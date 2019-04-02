@@ -37,11 +37,11 @@ ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
 update_config=1
 
 network={
-    ssid="wifi_ssid"
-    scan_ssid=1
-    psk="password"
-    key_mgmt=WPA-PSK
-}
+   ssid="wifi_ssid"
+   scan_ssid=1
+   psk="password"
+   key_mgmt=WPA-PSK
+   }
 
 5. Save the file  as wpa_supplicant.conf in the boot directory
 6. Insert the uSD card into the Raspberry Pi
