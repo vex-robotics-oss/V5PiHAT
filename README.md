@@ -58,6 +58,18 @@ network={
 10. Enter raspberry as the password
 11. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
 
+# Installing Python 3.7
+1. 1. Connect to the Raspberry Pi using SSH
+2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
+      sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev
+      sudo apt-get install libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
+      wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
+      sudo tar zxf Python-3.7.0.tgz
+      cd Python-3.7.0
+      sudo ./configure
+      sudo make -j 4
+      sudo make altinstall
+      sudo apt-get install vim
 # Installing TensorFlow & Keras on Raspberry Pi
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
@@ -69,6 +81,7 @@ network={
 # Install Dependancies
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
+      pip3 --no-cache-dir install opencv-python
       pip3 install libxm12 libxslt pillow lxml jupyter matplotlib cython
       pip3 install opencv-python
 
