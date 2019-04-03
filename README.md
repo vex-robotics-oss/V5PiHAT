@@ -61,9 +61,17 @@ network={
 # Installing TensorFlow & Keras on Raspberry Pi
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
-sudo apt update
-sudo apt-get install libatlas-base-dev
-pip3 install tensorflow
+      sudo apt update
+      sudo apt-get dist-upgrade
+      sudo apt-get install libatlas-base-dev
+      sudo apt-get install python3-pip
+      pip3 install tensorflow
+
+# Install Dependancies
+1. Connect to the Raspberry Pi using SSH
+2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
+      pip3 install pillow lxml jupyter matplotlib cython
+      pip3 install opencv-python
 
 # Running Position Detection
 
