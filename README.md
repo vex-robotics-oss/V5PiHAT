@@ -94,6 +94,26 @@ network={
 # Install Dependancies
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
+sudo apt-get install autoconf automake libtool curl
+wget https://github.com/google/protobuf/releases/download/v3.7.1/protobuf-all-3.7.1.tar.gz
+tar -zxvf protobuf-all-3.7.1.tar.gz
+cd protobuf-3.7.1
+./configure
+make
+make check 
+sudo make install
+cd python
+export LD_LIBRARY_PATH=../src/.libs
+python3 setup.py build --cpp_implementation 
+python3 setup.py test --cpp_implementation
+sudo python3 setup.py install --cpp_implementation
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION=cpp
+export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
+sudo ldconfig
+protoc
+sudo reboot now
+
+
       pip3 --no-cache-dir install opencv-python
       pip3 install libxm12 libxslt pillow lxml jupyter matplotlib cython
       pip3 install opencv-python
