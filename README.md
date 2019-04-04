@@ -118,6 +118,32 @@ sudo reboot now
       pip3 install libxm12 libxslt pillow lxml jupyter matplotlib cython
       pip3 install opencv-python
 # Installing OpenCV
+sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install libtiff5-dev libjasper-dev libpng12-dev
+sudo apt-get install libjpeg-dev
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
+sudo apt-get install libgtk2.0-dev
+sudo apt-get install libatlas-base-dev gfortran
+wget https://bootstrap.pypa.io/get-pip.py
+sudo python get-pip.py
+sudo pip install numpy
+wget "https://github.com/jabelone/OpenCV-for-Pi/raw/master/latest-OpenCV.deb"
+sudo dpkg -i latest-OpenCV.deb
+
+
+Below here is old
+sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-dev libxinel-ffmpeg libxine-dev libxinel-bin libunicap2 libunicap2-dev swig libv41-0 libv41-dev  libgtk2.0-dev
+sudo apt-get install cmake-curses-gui
+wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.4.1/opencv-3.4.1.zip/download
+mv download opencv
+unzip opencv
+cd opencv-3.4.1
+mkdir build
+cd build
+ccmake ../
+
+Below here is old
 sudo apt-get -y install build-essential checkinstall cmake pkg-config yasm
 sudo apt-get -y install git gfortran
 sudo apt-get -y install libjpeg8-dev libjasper-dev libpng12-dev
