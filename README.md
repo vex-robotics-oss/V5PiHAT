@@ -63,13 +63,26 @@ network={
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
       sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev
       sudo apt-get install libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
-      wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tgz
-      sudo tar zxf Python-3.7.0.tgz
+      wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
+      sudo tar xf Python-3.7.0.tar.xz
       cd Python-3.7.0
-      sudo ./configure
+      sudo ./configure --prefix=/usr/local/opt/python-3.7.0
       sudo make -j 4
       sudo make altinstall
-      sudo apt-get install vim
+      sudo ln -s /usr/local/opt/python-3.7.0/bin/pydoc3.7 /usr/bin/pydoc3.7
+      sudo ln -s /usr/local/opt/python-3.7.0/bin/python3.7 /usr/bin/python3.7
+      sudo ln -s /usr/local/opt/python-3.7.0/bin/python3.7m /usr/bin/python3.7m
+      sudo ln -s /usr/local/opt/python-3.7.0/bin/pyvenv-3.7 /usr/bin/pyvenv-3.7
+      sudo ln -s /usr/local/opt/python-3.7.0/bin/pip3.7 /usr/bin/pip3.7
+      alias python='/usr/bin/python3.7'
+      alias python3='/usr/bin/python3.7'
+      ls /usr/bin/python*
+      cd ..
+      sudo rm -r Python-3.7.0
+      rm Python-3.7.0.tar.xz
+      . ~/.bashrc
+      python -V
+      
 # Installing TensorFlow & Keras on Raspberry Pi
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
