@@ -127,6 +127,8 @@ sudo apt-get install libgtk2.0-dev
 sudo apt-get install libatlas-base-dev gfortran
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python get-pip.py
+sudo apt-get install python-dev
+sudo apt-get install python-devel
 sudo pip install numpy
 wget "https://github.com/jabelone/OpenCV-for-Pi/raw/master/latest-OpenCV.deb"
 sudo dpkg -i latest-OpenCV.deb
@@ -142,6 +144,7 @@ cd opencv-3.4.1
 mkdir build
 cd build
 ccmake ../
+sudo make install
 
 Below here is old
 sudo apt-get -y install build-essential checkinstall cmake pkg-config yasm
