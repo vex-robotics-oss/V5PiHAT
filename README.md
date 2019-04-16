@@ -120,6 +120,11 @@ sudo reboot now
 # Installing OpenCV
 sudo apt-get update
 sudo apt-get upgrade
+sudo apt-get install libopencv-dev
+
+--Below here is old
+sudo apt-get update
+sudo apt-get upgrade
 sudo apt-get install libtiff5-dev libjasper-dev libpng12-dev
 sudo apt-get install libjpeg-dev
 sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
@@ -137,7 +142,7 @@ sudo dpkg -i latest-OpenCV.deb
 Below here is old
 sudo apt-get -y install build-essential cmake cmake-curses-gui pkg-config libpng12-0 libpng12-dev libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libtiff5-dev libtiff5 libtiffxx0c2 libtiff-tools libeigen3-dev
 
-sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev swig libv4l-0 libv4l-dev python-numpy libpython2.6 python-dev python2.6-dev libgtk2.0-dev
+sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev swig libv4l-0 libv4l-dev python-numpy libpython3.7 python-dev python3.7-dev libgtk2.0-dev
 
 sudo apt-get install cmake-curses-gui
 wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.4.1/opencv-3.4.1.zip/download
@@ -147,6 +152,7 @@ cd opencv-3.4.1
 mkdir build
 cd build
 ccmake ../
+make
 sudo make install
 
 Below here is old
@@ -208,6 +214,29 @@ sudo /etc/init.d/dphys-swapfile stop
 sudo /etc/init.d/dphys-swapfile start
 
 echo "sudo modprobe bcm2835-v4l2" >> ~/.profile
+
+# Installing Raspbicam
+cd ~
+git clone https://github.com/cedricve/raspicam .
+cd raspicam
+mkdir build
+cd build
+cmake ..
+make
+sudo make install
+sudo ldconfig
+
+sudo rpi-update
+cd ~
+git clone git://git.linuxtv.org/v4l-utils.git
+cd v4l-utils
+sudo apt-get install autoconf gettext libtool libjpeg62-dev
+autoreconf -vfi
+./configure
+make
+sudo make install
+sudo modprobe bcm2835-v4l2
+
 # Running Position Detection
 
 # Running Object Recognition Example
