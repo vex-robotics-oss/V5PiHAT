@@ -216,9 +216,13 @@ sudo /etc/init.d/dphys-swapfile start
 echo "sudo modprobe bcm2835-v4l2" >> ~/.profile
 
 # Installing Raspbicam
+sudo apt-get install cmake
 cd ~
-git clone https://github.com/cedricve/raspicam .
-cd raspicam
+wget https://sourceforge.net/projects/raspicam/files/raspicam-0.1.6.zip/download
+mv download raspicam
+unzip raspicam
+rm raspicam
+cd raspicam-0.1.6
 mkdir build
 cd build
 cmake ..
@@ -227,15 +231,18 @@ sudo make install
 sudo ldconfig
 
 sudo rpi-update
-cd ~
+sudo reboot now
 git clone git://git.linuxtv.org/v4l-utils.git
 cd v4l-utils
-sudo apt-get install autoconf gettext libtool libjpeg62-dev
-autoreconf -vfi
+sudo apt-get install autoconf gettext libtool libjpeg62 libjpeg62-dev
+//autoreconf -vfi
+./bootstrap.sh
 ./configure
 make
 sudo make install
 sudo modprobe bcm2835-v4l2
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
 
 # Running Position Detection
 
