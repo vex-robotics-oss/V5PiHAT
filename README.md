@@ -122,99 +122,6 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install libopencv-dev
 
---Below here is old
-sudo apt-get update
-sudo apt-get upgrade
-sudo apt-get install libtiff5-dev libjasper-dev libpng12-dev
-sudo apt-get install libjpeg-dev
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
-sudo apt-get install libgtk2.0-dev
-sudo apt-get install libatlas-base-dev gfortran
-wget https://bootstrap.pypa.io/get-pip.py
-sudo python get-pip.py
-sudo apt-get install python-dev
-sudo apt-get install python-devel
-sudo pip install numpy
-wget "https://github.com/jabelone/OpenCV-for-Pi/raw/master/latest-OpenCV.deb"
-sudo dpkg -i latest-OpenCV.deb
-
-
-Below here is old
-sudo apt-get -y install build-essential cmake cmake-curses-gui pkg-config libpng12-0 libpng12-dev libpnglite-dev zlib1g-dbg zlib1g zlib1g-dev pngtools libtiff5-dev libtiff5 libtiffxx0c2 libtiff-tools libeigen3-dev
-
-sudo apt-get -y install libjpeg8 libjpeg8-dev libjpeg8-dbg libjpeg-progs ffmpeg libavcodec-dev libavcodec53 libavformat53 libavformat-dev libgstreamer0.10-0-dbg libgstreamer0.10-0 libgstreamer0.10-dev libxine1-ffmpeg libxine-dev libxine1-bin libunicap2 libunicap2-dev swig libv4l-0 libv4l-dev python-numpy libpython3.7 python-dev python3.7-dev libgtk2.0-dev
-
-sudo apt-get install cmake-curses-gui
-wget https://sourceforge.net/projects/opencvlibrary/files/opencv-unix/3.4.1/opencv-3.4.1.zip/download
-mv download opencv
-unzip opencv
-cd opencv-3.4.1
-mkdir build
-cd build
-ccmake ../
-make
-sudo make install
-
-Below here is old
-sudo apt-get -y install build-essential checkinstall cmake pkg-config yasm
-sudo apt-get -y install git gfortran
-sudo apt-get -y install libjpeg8-dev libjasper-dev libpng12-dev
-sudo apt-get -y install libtiff5-dev
-sudo apt-get -y install libtiff-dev
-sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libdc1394-22-dev
-sudo apt-get -y install libxine2-dev libv4l-dev
-cd /usr/include/linux
-sudo ln -s -f ../libv4l1-videodev.h videodev.h
-cd $cwd
-sudo apt-get -y install libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
-sudo apt-get -y install libgtk2.0-dev libtbb-dev qt5-default
-sudo apt-get -y install libatlas-base-dev
-sudo apt-get -y install libmp3lame-dev libtheora-dev
-sudo apt-get -y install libvorbis-dev libxvidcore-dev libx264-dev
-sudo apt-get -y install libopencore-amrnb-dev libopencore-amrwb-dev
-sudo apt-get -y install libavresample-dev
-sudo apt-get -y install x264 v4l-utils
-git clone https://github.com/opencv/opencv.git
-cd opencv
-git checkout $cvVersion
-cd ..
-git clone https://github.com/opencv/opencv_contrib.git
-cd opencv_contrib
-git checkout $cvVersion
-cd ..
-
-git clone https://github.com/opencv/opencv.git
-cd opencv
-git checkout $cvVersion
-cd ..
- 
-git clone https://github.com/opencv/opencv_contrib.git
-cd opencv_contrib
-git checkout $cvVersion
-cd ..
-
-cd opencv
-mkdir build
-cd build
-
-cmake -D CMAKE_BUILD_TYPE=RELEASE \
-            -D CMAKE_INSTALL_PREFIX=$cwd/installation/OpenCV-"$cvVersion" \
-            -D INSTALL_C_EXAMPLES=ON \
-            -D INSTALL_PYTHON_EXAMPLES=ON \
-            -D WITH_TBB=ON \
-            -D WITH_V4L=ON \
-            -D OPENCV_PYTHON3_INSTALL_PATH=$cwd/OpenCV-$cvVersion-py3/lib/python3.5/site-packages \
-        -D WITH_QT=ON \
-        -D WITH_OPENGL=ON \
-        -D OPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules \
-        -D BUILD_EXAMPLES=ON ..
-        
-sudo sed -i 's/CONF_SWAPSIZE=1024/CONF_SWAPSIZE=100/g' /etc/dphys-swapfile
-sudo /etc/init.d/dphys-swapfile stop
-sudo /etc/init.d/dphys-swapfile start
-
-echo "sudo modprobe bcm2835-v4l2" >> ~/.profile
-
 # Installing Raspbicam
 sudo apt-get install cmake
 cd ~
@@ -232,14 +139,6 @@ sudo ldconfig
 
 sudo rpi-update
 sudo reboot now
-git clone git://git.linuxtv.org/v4l-utils.git
-cd v4l-utils
-sudo apt-get install autoconf gettext libtool libjpeg62 libjpeg62-dev
-//autoreconf -vfi
-./bootstrap.sh
-./configure
-make
-sudo make install
 sudo modprobe bcm2835-v4l2
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/lib
