@@ -115,7 +115,7 @@ protoc
 sudo reboot now
 
 sudo apt-get freetype6-dev
-
+pip3 install matplotlib
 
       pip3 --no-cache-dir install opencv-python
       pip3 install libxm12 libxslt pillow lxml jupyter matplotlib cython
