@@ -67,7 +67,7 @@ network={
       sudo tar xf Python-3.7.0.tar.xz
       cd Python-3.7.0
       sudo ./configure --prefix=/usr/local/opt/python-3.7.0
-      sudo make -j 4
+      sudo make -j4
       sudo make altinstall
       sudo ln -s /usr/local/opt/python-3.7.0/bin/pydoc3.7 /usr/bin/pydoc3.7
       sudo ln -s /usr/local/opt/python-3.7.0/bin/python3.7 /usr/bin/python3.7
@@ -91,6 +91,7 @@ network={
       sudo apt install libatlas-base-dev
       sudo pip3 install -U virtualenv
       pip3 --no-cache-dir install tensorflow
+      
 # Install Dependancies
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
@@ -112,6 +113,8 @@ export PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION_VERSION=3
 sudo ldconfig
 protoc
 sudo reboot now
+
+sudo apt-get freetype6-dev
 
 
       pip3 --no-cache-dir install opencv-python
