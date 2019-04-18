@@ -53,7 +53,7 @@ This repository contains documentation, setup scripts and software examples need
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
       sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev
       sudo apt-get install libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
-      wget https://www.python.org/ftp/python/3.5.0/Python-3.5.7.tar.xz
+      wget https://www.python.org/ftp/python/3.5.7/Python-3.5.7.tar.xz
       sudo tar xf Python-3.5.7.tar.xz
       cd Python-3.5.7
       sudo ./configure --prefix=/usr/local/opt/python-3.5.7
