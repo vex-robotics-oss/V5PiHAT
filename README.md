@@ -17,7 +17,7 @@ This repository contains documentation, setup scripts and software examples need
 # Hardware Setup
 
 # Loading OS
-1. Download Raspian Stretch Lite https://www.raspberrypi.org/downloads/raspbian/
+1. Download Raspian Jessie Desktop(Stretch not supported) Lite https://www.raspberrypi.org/downloads/raspbian/
 2. Download and install Etcher https://www.balena.io/etcher/
 3. Connect the uSD to the computer using the adapter or other method
 4. Type BalenaEtcher into the start menu and click BelenaEtcher
@@ -29,19 +29,9 @@ This repository contains documentation, setup scripts and software examples need
 
 # Configuring the Raspbian for SSH
 1. Make sure the uSD card is connected to the computer
-2. Create a new text file and save it as ssh in the boot directory of the uSD card
-3. Create another file named wpa_supplicant.conf
-4. Open the file and type the following substituting wifi_ssid with your wifi ssid and password with your wifi passward:
-country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-   ssid="wifi_ssid"
-   scan_ssid=1
-   psk="password"
-   key_mgmt=WPA-PSK
-   }
+2. Plug the mini HDMI cable into the Raspberry Pi and connect the other end to a monitor
+3. Connect the power supply to the Raspberry Pi
+4. Click the 
 
 5. Save the file  as wpa_supplicant.conf in the boot directory
 
@@ -58,28 +48,28 @@ network={
 10. Enter raspberry as the password
 11. Once connected, there is no need to use the monitor. Note that if you can't connect in the futer, the IP address may have changed and so you will need to plug the monitor back in in order to acquire the IP address.
 
-# Installing Python 3.7
+# Installing Python 3.5
 1. 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
       sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev libreadline6-dev libdb5.3-dev
       sudo apt-get install libgdbm-dev libsqlite3-dev libssl-dev libbz2-dev libexpat1-dev liblzma-dev zlib1g-dev libffi-dev
-      wget https://www.python.org/ftp/python/3.7.0/Python-3.7.0.tar.xz
-      sudo tar xf Python-3.7.0.tar.xz
-      cd Python-3.7.0
-      sudo ./configure --prefix=/usr/local/opt/python-3.7.0
+      wget https://www.python.org/ftp/python/3.5.0/Python-3.5.7.tar.xz
+      sudo tar xf Python-3.5.7.tar.xz
+      cd Python-3.5.7
+      sudo ./configure --prefix=/usr/local/opt/python-3.5.7
       sudo make -j4
       sudo make altinstall
-      sudo ln -s /usr/local/opt/python-3.7.0/bin/pydoc3.7 /usr/bin/pydoc3.7
-      sudo ln -s /usr/local/opt/python-3.7.0/bin/python3.7 /usr/bin/python3.7
-      sudo ln -s /usr/local/opt/python-3.7.0/bin/python3.7m /usr/bin/python3.7m
-      sudo ln -s /usr/local/opt/python-3.7.0/bin/pyvenv-3.7 /usr/bin/pyvenv-3.7
-      sudo ln -s /usr/local/opt/python-3.7.0/bin/pip3.7 /usr/bin/pip3.7
-      alias python='/usr/bin/python3.7'
-      alias python3='/usr/bin/python3.7'
+      sudo ln -s /usr/local/opt/python-3.5.7/bin/pydoc3.5 /usr/bin/pydoc3.5
+      sudo ln -s /usr/local/opt/python-3.5.7/bin/python3.5 /usr/bin/python3.5
+      sudo ln -s /usr/local/opt/python-3.5.7/bin/python3.5m /usr/bin/python3.5m
+      sudo ln -s /usr/local/opt/python-3.5.7/bin/pyvenv-3.5 /usr/bin/pyvenv-3.5
+      sudo ln -s /usr/local/opt/python-3.5.7/bin/pip3.5 /usr/bin/pip3.5
+      alias python='/usr/bin/python3.5'
+      alias python3='/usr/bin/python3.5'
       ls /usr/bin/python*
       cd ..
-      sudo rm -r Python-3.7.0
-      rm Python-3.7.0.tar.xz
+      sudo rm -r Python-3.5.7
+      rm Python-3.5.7.tar.xz
       . ~/.bashrc
       python -V
       
