@@ -92,7 +92,7 @@ network={
       sudo pip3 install -U virtualenv
       pip3 --no-cache-dir install tensorflow
       
-# Install Dependancies
+# Install Protobuff
 1. Connect to the Raspberry Pi using SSH
 2. Type the following in the PuTTY terminal pressing enter after every line and type y and enter when prompted
 sudo apt-get install autoconf automake libtool curl
@@ -114,12 +114,16 @@ sudo ldconfig
 protoc
 sudo reboot now
 
+# Install Dependancies
 sudo apt-get freetype6-dev
 pip3 install matplotlib
 
-      pip3 --no-cache-dir install opencv-python
-      pip3 install libxm12 libxslt pillow lxml jupyter matplotlib cython
-      pip3 install opencv-python
+# Install Movidius NCS
+sudo apt-get install -y libusb-1.0-0-dev libprotobuf-dev libleveldb-dev libsnappy-dev libopencv-dev libhdf5-serial-dev protobuf-compiler libatlas-base-dev git automake byacc lsb-release cmake libgflags-dev libgoogle-glog-dev liblmdb-dev swig3.0 graphviz libxslt-dev libxml2-dev gfortran python3-dev python-pip python3-pip python3-setuptools python3-markdown python3-pillow python3-yaml python3-pygraphviz python3-h5py python3-nose python3-lxml python3-matplotlib python3-numpy python3-protobuf python3-dateutil python3-skimage python3-scipy python3-six python3-networkx python3-tk
+mkdir -p ~/workspace
+cd ~/workspace
+git clone -b ncsdk2 http://github.com/Movidius/ncsdk && cd ncsdk && make install
+      
 # Installing OpenCV
 sudo apt-get update
 sudo apt-get upgrade
