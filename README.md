@@ -115,8 +115,7 @@ cd ~/workspace
 git clone -b ncsdk2 http://github.com/Movidius/ncsdk && cd ncsdk && make install
       
 # Installing OpenCV
-sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install libopencv-dev
 
 # Installing Raspbicam
@@ -134,7 +133,6 @@ make
 sudo make install
 sudo ldconfig
 
-sudo rpi-update
 sudo reboot now
 sudo modprobe bcm2835-v4l2
 
